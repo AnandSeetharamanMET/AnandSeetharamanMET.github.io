@@ -63,6 +63,47 @@ window.PROJECTS = [
     links: [],
   },
 
+  {
+    slug: 'slip-joint-pliers',
+    title: 'Slip-Joint Pliers: SolidWorks Design & FEA',
+    subtitle: 'Pliers assembly modeled in SolidWorks with a static stress study · Personal project',
+    date: '2023',
+    status: 'Completed',
+    org: '',
+    summary:
+      'I modeled a pair of slip-joint pliers in SolidWorks in January 2023 and ran a static FEA study in SolidWorks Simulation to see how the tool responds when the handles are squeezed.',
+    overview:
+      'The assembly has two jaw/handle bodies (about 229 × 16 × 47 mm, Chrome Stainless Steel), two handle grips (about 120 × 24 × 18 mm), and two 0.4 in diameter pivot bolts (about 13.2 mm and 16.4 mm long). I built two assembly variants. On one of them I set up a static study with distributed squeezing loads on both handles and the jaws fixed near the teeth. Most of the body stays at low stress, but the peak von Mises value lands right at the fixture/contact area near the jaw teeth and sits above the yield strength shown on the plot. I read that peak as a likely stress concentration or singularity caused by point-like restraints, not as a real failure prediction.',
+    role: 'Solo project. I did the CAD modeling, the assembly, and the simulation setup.',
+    team: [],
+    tools: ['SolidWorks', 'SolidWorks Simulation (FEA)'],
+    highlights: [
+      'I modeled the jaw/handle bodies, grips, and pivot bolts, and mated them into an assembly (two variants).',
+      'I set up a static study: distributed squeezing loads on both handles, jaws fixed near the teeth.',
+      'Max displacement is at the handle tips, which matches how pliers flex when squeezed.',
+      'The stress peak is localized at the restraint near the jaw teeth. Most of the body stays low (blue).',
+    ],
+    results: [
+      { value: '1.937 mm', label: 'Max resultant displacement, at the handle tips' },
+      { value: '1.412e9 N/m²', label: 'Peak von Mises stress (localized at the jaw fixture)' },
+      { value: '1.724e8 N/m²', label: 'Yield strength shown on the plot' },
+    ],
+    nextSteps: [
+      'Refine the mesh around the jaw teeth and fixture region.',
+      'Use a more realistic contact and fixture setup instead of point-like restraints.',
+      'Check a higher-strength tool steel for the jaw/handle bodies.',
+    ],
+    images: [
+      { src: 'assets/img/pliers-assembly.webp', alt: 'SolidWorks isometric view of the slip-joint pliers assembly: steel jaws with serrated teeth, pivot bolt, and red handle grips.', caption: 'Full pliers assembly in SolidWorks.' },
+      { src: 'assets/img/pliers-jaw-handle.webp', alt: 'SolidWorks view of one jaw/handle body of the pliers.', caption: 'Jaw/handle body (Chrome Stainless Steel).' },
+      { src: 'assets/img/pliers-grip.webp', alt: 'SolidWorks render of a curved red handle grip.', caption: 'Handle grip.' },
+      { src: 'assets/img/pliers-bolt.webp', alt: 'SolidWorks view of a pivot bolt.', caption: 'Pivot bolt (0.4 in diameter).' },
+      { src: 'assets/img/pliers-fea-displacement.webp', alt: 'SolidWorks Simulation displacement plot of the pliers, with color contour showing the largest displacement at the handle tips.', caption: 'Resultant displacement: max 1.937 mm at the handle tips (deformation scale 12.08).' },
+      { src: 'assets/img/pliers-fea-stress.webp', alt: 'SolidWorks Simulation von Mises stress plot of the pliers with load arrows on both handles; most of the body is blue (low stress).', caption: 'von Mises stress: peak 1.412e9 N/m² at the jaw fixture; yield 1.724e8 N/m² marked on the legend.' },
+    ],
+    links: [],
+  },
+
   /* ------------------------------------------------------------------
      TEMPLATE — copy everything between the braces into the array above.
      Use status: 'In progress' for something you're currently building.
