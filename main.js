@@ -158,6 +158,7 @@
       gallery +
       section('Overview', '<p>' + esc(p.overview || p.summary) + '</p>') +
       section('My role & team', (p.role ? '<p>' + esc(p.role) + '</p>' : '') + team) +
+      section('Design constraints & requirements', list(p.constraints)) +
       section('Highlights', list(p.highlights)) +
       section('Tools', has(p.tools) ? list(p.tools, 'chips') : '') +
       section('Results', results) +
