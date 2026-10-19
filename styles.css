@@ -1,54 +1,34 @@
 /* =========================================================
    Anand Seetharaman — portfolio styles
-   Light theme, navy accent (#1F3A5F), optional dark mode.
+   Techy dark theme: near-black navy, cyan accent, blueprint grid.
    ========================================================= */
 :root {
-  --navy: #1f3a5f;
-  --navy-700: #162b47;
-  --navy-50: #eef3f9;
-  --accent: #1f3a5f;
-  --accent-contrast: #ffffff;
-  --link: #1f4f8a;
-  --bg: #ffffff;
-  --bg-alt: #f5f7fa;
-  --surface: #ffffff;
-  --text: #1b2430;
-  --muted: #4f5b6b;
-  --border: #dce3ec;
-  --grid: rgba(31, 58, 95, 0.06);
-  --chip-bg: #eef3f9;
-  --chip-text: #1f3a5f;
-  --done-bg: #e3f2ea; --done-text: #1d6b43;
-  --prog-bg: #fff2d6; --prog-text: #8a5a00;
-  --plan-bg: #ebeef3; --plan-text: #47546a;
-  --shadow: 0 1px 2px rgba(16, 30, 54, .06), 0 6px 20px rgba(16, 30, 54, .07);
-  --shadow-lg: 0 20px 60px rgba(10, 20, 40, .25);
-  --radius: 12px;
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: dark;
+  --navy: #0b1220;
+  --navy-700: #22d3ee;
+  --navy-50: rgba(34, 211, 238, .08);
+  --accent: #22d3ee;
+  --accent-contrast: #04121a;
+  --link: #67e8f9;
+  --bg: #070b14;
+  --bg-alt: #0a1120;
+  --surface: #0e1728;
+  --text: #e6edf6;
+  --muted: #9fb0c6;
+  --border: #1f3048;
+  --grid: rgba(34, 211, 238, .055);
+  --chip-bg: rgba(34, 211, 238, .08);
+  --chip-text: #a5f3fc;
+  --done-bg: rgba(52, 211, 153, .12); --done-text: #6ee7b7;
+  --prog-bg: rgba(251, 191, 36, .12); --prog-text: #fcd34d;
+  --plan-bg: #1a2638; --plan-text: #b8c4d8;
+  --shadow: 0 0 0 1px rgba(0,0,0,.2);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.6);
+  --glow: 0 0 0 1px rgba(34,211,238,.45), 0 0 24px rgba(34,211,238,.18);
+  --radius: 4px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --header-h: 64px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent: #8db4e6;
-    --accent-contrast: #0d1726;
-    --link: #9fc2ee;
-    --bg: #0f1722;
-    --bg-alt: #131d2b;
-    --surface: #172334;
-    --text: #e6ebf2;
-    --muted: #a7b3c4;
-    --border: #2a3a50;
-    --grid: rgba(141, 180, 230, 0.06);
-    --chip-bg: #1e2e45;
-    --chip-text: #cfe0f6;
-    --navy-50: #1a2940;
-    --done-bg: #173a2a; --done-text: #8fdcb2;
-    --prog-bg: #3d2f0f; --prog-text: #f3c86b;
-    --plan-bg: #26324a; --plan-text: #b8c4d8;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
-  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -299,4 +279,107 @@ dialog::backdrop { background: rgba(8, 15, 28, .62); }
   .tl-sub { padding: 12px 12px; }
   .skill-group, .card-body { padding: 16px; }
   .chips li { font-size: .85rem; }
+}
+
+/* =========================================================
+   TECHY LAYER — blueprint / spec-sheet details
+   ========================================================= */
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(34,211,238,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+::selection { background: rgba(34,211,238,.3); color: #fff; }
+:focus-visible { outline-color: #fbbf24; }
+.site-header { background: rgba(7,11,20,.82); border-bottom-color: var(--border); }
+.brand { font-family: var(--mono); font-weight: 600; letter-spacing: .02em; }
+.brand-mark { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 2px; box-shadow: inset 0 0 12px rgba(34,211,238,.15); font-family: var(--mono); }
+.site-nav a { font-family: var(--mono); font-size: .85rem !important; letter-spacing: .03em; color: var(--muted); }
+.site-nav a:hover { color: var(--accent); }
+.nav-cta, .nav-toggle { border-radius: 2px !important; }
+
+.btn { border-radius: 2px; font-family: var(--mono); font-size: .9rem; letter-spacing: .03em; text-transform: uppercase; transition: box-shadow .15s, background .15s, color .15s; }
+.btn-primary { background: var(--accent); color: var(--accent-contrast); }
+.btn-primary:hover { background: #67e8f9; box-shadow: 0 0 20px rgba(34,211,238,.35); }
+.btn-secondary { background: transparent; }
+.btn-secondary:hover { background: var(--navy-50); box-shadow: var(--glow); }
+
+.hero { background-color: transparent; border-bottom-color: var(--border);
+  background-image:
+    radial-gradient(ellipse at 75% 20%, rgba(34,211,238,.10), transparent 55%),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(rgba(34,211,238,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,211,238,.03) 1px, transparent 1px);
+  background-size: auto, 128px 128px, 128px 128px, 16px 16px, 16px 16px; }
+.hero::before { width: 2px; background: linear-gradient(var(--accent), transparent); }
+.eyebrow { color: var(--accent); }
+.eyebrow::before { content: "// "; opacity: .6; }
+.hero h1 { color: var(--text); }
+.hero-title { font-family: var(--mono); font-weight: 500; color: var(--accent); font-size: clamp(1rem, 2.8vw, 1.25rem); letter-spacing: .02em; }
+
+/* spec-sheet "At a glance" */
+.hero-card { position: relative; background: rgba(14,23,40,.85); border: 1px solid var(--border); border-top: 1px solid var(--border); border-radius: 2px; padding: 0 0 4px; box-shadow: none; }
+.hero-card .card-label { margin: 0; padding: 10px 16px; border-bottom: 1px solid var(--border); background: rgba(34,211,238,.06); color: var(--accent); display: flex; justify-content: space-between; }
+.hero-card .card-label::after { content: "SPEC"; color: var(--muted); font-weight: 400; }
+.glance > div { display: grid; grid-template-columns: 112px 1fr; gap: 12px; padding: 10px 16px; border-top: 1px dashed var(--border); }
+.glance dt { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--muted); padding-top: 3px; }
+.glance dd { margin: 0; font-size: .95rem; }
+@media (max-width: 420px) { .glance > div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* corner brackets */
+.hero-card, .project-card, .tl-item, .skill-group, .cert, .contact-list { position: relative; }
+.hero-card::before, .hero-card::after, .project-card::before, .project-card::after,
+.skill-group::before, .skill-group::after {
+  content: ""; position: absolute; width: 12px; height: 12px; pointer-events: none; z-index: 1;
+  border-color: var(--accent); border-style: solid; opacity: .8;
+}
+.hero-card::before, .project-card::before, .skill-group::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.hero-card .card-label::after { position: static; }
+.hero-card::after, .project-card::after, .skill-group::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.section-alt { background: rgba(10,17,32,.7); }
+.section-num { font-size: .85rem; padding: 2px 6px; border: 1px solid var(--accent); border-radius: 2px; }
+.section-num::before { content: "SEC."; opacity: .7; margin-right: 2px; }
+.section-title::after { background: linear-gradient(90deg, var(--border), transparent); }
+.subsection-title { font-family: var(--mono); font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); display: flex; align-items: center; gap: 12px; }
+.subsection-title::before { content: "▸"; }
+.subsection-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+.tl-item, .skill-group, .cert, .contact-list { border-radius: 2px; box-shadow: none; }
+.tl-item::before { border-radius: 0; transform: rotate(45deg); border-width: 2px; background: var(--bg); }
+.tl-current::before { background: var(--accent); box-shadow: 0 0 12px rgba(34,211,238,.6); }
+.tl-head h3 { font-size: 1.1rem; }
+.tl-org { color: #c3d0e0; }
+.tl-sub { background: rgba(34,211,238,.04); border-radius: 0; }
+
+.chips li { border-radius: 2px; border: 1px solid rgba(34,211,238,.22); font-family: var(--mono); font-size: .8rem; }
+.chips-sm li { font-size: .72rem; }
+.status { border-radius: 2px; font-family: var(--mono); font-weight: 600; }
+
+.project-card { border-radius: 2px; box-shadow: none; overflow: visible; transition: box-shadow .2s, border-color .2s; }
+.project-card:hover { transform: none; border-color: rgba(34,211,238,.5); box-shadow: var(--glow); }
+.card-media, .project-card.featured .card-media img, .m-thumb { background: #e9eef5; }
+.card-media { overflow: hidden; border-bottom-color: var(--border); }
+.project-card:hover .card-media img { transform: none; }
+.card-title { letter-spacing: -.01em; }
+.card-subtitle { color: #b7c5d8; font-weight: 500; }
+.card-meta { color: var(--muted); }
+
+.skill-group h3 { font-family: var(--mono); font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; }
+.cert-icon { border-radius: 2px; border: 1px solid rgba(34,211,238,.3); }
+.contact-k { color: var(--accent); }
+.site-footer { background: #05080f; border-top: 1px solid var(--border); color: var(--muted); font-family: var(--mono); font-size: .82rem; }
+
+.modal { background: var(--surface); border: 1px solid var(--border); }
+@media (min-width: 720px) { .modal { border-radius: 4px; } }
+.m-results li { border-radius: 2px; background: rgba(34,211,238,.04); border-top: 2px solid var(--accent); }
+.r-value { font-family: var(--mono); font-weight: 600; font-size: 1.15rem; }
+.icon-btn { border-radius: 2px; }
+
+@media print {
+  body, .hero { background: #fff !important; color: #000; }
+  .hero-card::before, .hero-card::after, .project-card::before, .project-card::after, .skill-group::before, .skill-group::after { display: none; }
 }
