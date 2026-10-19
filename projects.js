@@ -14,6 +14,8 @@
               Always write a real `alt` description for accessibility.
    results  : [{ value, label }] — short headline numbers / outcomes.
    links    : [{ label, url }] — e.g. GitHub repo, video, write-up PDF.
+   category : optional; 'coursework' renders the card under the Coursework
+              heading below the main Projects grid.
    ===================================================================== */
 window.PROJECTS = [
   {
@@ -65,6 +67,7 @@ window.PROJECTS = [
 
   {
     slug: 'slip-joint-pliers',
+    category: 'coursework',
     title: 'Slip-Joint Pliers: SolidWorks Design & FEA',
     subtitle: 'Pliers assembly modeled in SolidWorks with a static stress study · Personal project',
     date: '2023',
@@ -94,18 +97,19 @@ window.PROJECTS = [
       'Check a higher-strength tool steel for the jaw/handle bodies.',
     ],
     images: [
-      { src: 'assets/img/pliers-assembly.webp', alt: 'SolidWorks isometric view of the slip-joint pliers assembly: steel jaws with serrated teeth, pivot bolt, and red handle grips.', caption: 'Full pliers assembly in SolidWorks.' },
-      { src: 'assets/img/pliers-jaw-handle.webp', alt: 'SolidWorks view of one jaw/handle body of the pliers.', caption: 'Jaw/handle body (Chrome Stainless Steel).' },
-      { src: 'assets/img/pliers-grip.webp', alt: 'SolidWorks render of a curved red handle grip.', caption: 'Handle grip.' },
-      { src: 'assets/img/pliers-bolt.webp', alt: 'SolidWorks view of a pivot bolt.', caption: 'Pivot bolt (0.4 in diameter).' },
-      { src: 'assets/img/pliers-fea-displacement.webp', alt: 'SolidWorks Simulation displacement plot of the pliers, with color contour showing the largest displacement at the handle tips.', caption: 'Resultant displacement: max 1.937 mm at the handle tips (deformation scale 12.08).' },
-      { src: 'assets/img/pliers-fea-stress.webp', alt: 'SolidWorks Simulation von Mises stress plot of the pliers with load arrows on both handles; most of the body is blue (low stress).', caption: 'von Mises stress: peak 1.412e9 N/m² at the jaw fixture; yield 1.724e8 N/m² marked on the legend.' },
+      { src: 'assets/img/coursework/pliers-assembly.webp', alt: 'SolidWorks isometric view of the slip-joint pliers assembly: steel jaws with serrated teeth, pivot bolt, and red handle grips.', caption: 'Full pliers assembly in SolidWorks.' },
+      { src: 'assets/img/coursework/pliers-jaw-handle.webp', alt: 'SolidWorks view of one jaw/handle body of the pliers.', caption: 'Jaw/handle body (Chrome Stainless Steel).' },
+      { src: 'assets/img/coursework/pliers-grip.webp', alt: 'SolidWorks render of a curved red handle grip.', caption: 'Handle grip.' },
+      { src: 'assets/img/coursework/pliers-bolt.webp', alt: 'SolidWorks view of a pivot bolt.', caption: 'Pivot bolt (0.4 in diameter).' },
+      { src: 'assets/img/coursework/pliers-fea-displacement.webp', alt: 'SolidWorks Simulation displacement plot of the pliers, with color contour showing the largest displacement at the handle tips.', caption: 'Resultant displacement: max 1.937 mm at the handle tips (deformation scale 12.08).' },
+      { src: 'assets/img/coursework/pliers-fea-stress.webp', alt: 'SolidWorks Simulation von Mises stress plot of the pliers with load arrows on both handles; most of the body is blue (low stress).', caption: 'von Mises stress: peak 1.412e9 N/m² at the jaw fixture; yield 1.724e8 N/m² marked on the legend.' },
     ],
     links: [],
   },
 
   {
     slug: 'bamjack',
+    category: 'coursework',
     title: 'BAMJACK',
     subtitle: 'Portable full-car jack system · Machine Design course project (Group 4 team project)',
     date: '2023',
@@ -116,7 +120,7 @@ window.PROJECTS = [
     overview:
       'Jacks that can lift an entire car tend to be expensive, bulky, and hard to move, and portable jacks usually lift only one wheel. Our goal was a full-car jack that is portable, storable, and cheaper than retail options. BAMJACK uses a center main frame with four telescopic arms that each extend up to 50 in from the base, rotate up to 300°, and lock at different angles. The arms fold into the hollow frame for storage, and the frame splits down the middle so half of it can be used for smaller jobs. Each arm carries a custom bottle-screw jack that goes from 6.2 in compressed to 16 in extended. A custom gearbox with U-joint extension arms lets you raise two jacks at the same time, by hand or with a drill. We started with a hydraulic jack but switched to designing our own screw jack because of cost and lead time, and because a screw jack works with the gearbox accessory. Most parts are 7079 aluminum, with plain carbon steel internal screws and gears and brass bushings. We checked the jack and main frame in SolidWorks Simulation against a target factor of safety of 2.5.',
     role:
-      'Group 4 team project for KSU Machine Design 4501. Team: Janine Kennel, Mechack Nduwa, Ben Phillips, Cheran Rammohan, and me (Anand Seetharaman). The final report credits the work to the whole group.',
+      'Group 4 team project for KSU Machine Design 4501. Team: Janine Kennel, Mechack Nduwa, Ben Phillips, Cheran Rammohan, and me (Anand Seetharaman). The project report credits the work to the whole group.',
     team: ['Janine Kennel', 'Mechack Nduwa', 'Ben Phillips', 'Cheran Rammohan', 'Anand Seetharaman'],
     tools: ['SolidWorks', 'SolidWorks Simulation (FEA)', 'Engineering drawings', 'Material selection', 'Cost analysis'],
     constraints: [
@@ -149,15 +153,15 @@ window.PROJECTS = [
       'Keep cutting overall weight.',
     ],
     images: [
-      { src: 'assets/img/bamjack-assembly.webp', alt: 'SolidWorks render of the BAMJACK assembly: a long main frame with telescopic arms ending in bottle-screw jacks, plus the gearbox accessory with extension arms.', caption: 'BAMJACK assembly with the gearbox accessory (the 4-jack version mirrors this on the main frame).' },
-      { src: 'assets/img/bamjack-jack.webp', alt: 'SolidWorks render of the telescoping bottle-screw jack with a tiered body on a round base.', caption: 'Custom telescoping bottle-screw jack.' },
-      { src: 'assets/img/bamjack-jack-section.webp', alt: 'Section view of the bottle-screw jack showing nested tiers, threaded screws, gears, and bushings.', caption: 'Jack section view: 4 outer tiers, main cover, 3 threaded screws, 2 gears, 2 bushings.' },
-      { src: 'assets/img/bamjack-jack-exploded.webp', alt: 'Exploded SolidWorks view of the bottle-screw jack with numbered balloons and a parts list.', caption: 'Exploded view of the jack assembly (from our design constraint report).' },
-      { src: 'assets/img/bamjack-jack-fea-stress.webp', alt: 'SolidWorks Simulation von Mises stress plot of the jack assembly, mostly blue, with min and max probes labeled.', caption: 'Jack FEA at 1500 lbf: max von Mises stress 18.42 ksi.' },
-      { src: 'assets/img/bamjack-jack-fea-displacement.webp', alt: 'SolidWorks Simulation displacement plot of the jack assembly with a color contour.', caption: 'Jack FEA at 1500 lbf: displacement distribution.' },
-      { src: 'assets/img/bamjack-gearbox.webp', alt: 'Exploded SolidWorks view of the gearbox accessory showing the housing, gears, and T piece.', caption: 'Gearbox accessory, exploded view (Aluminum 7079).' },
-      { src: 'assets/img/bamjack-frame-early.webp', alt: 'Earlier SolidWorks render of the BAMJACK main frame with four arms ending in jacks.', caption: 'Earlier main frame and arm layout (design constraint report, March 2023).' },
-      { src: 'assets/img/bamjack-frame-fea.webp', alt: 'SolidWorks Simulation stress plot of a main frame arm section.', caption: 'Main frame FEA at 180 lbf (2.5 factor-of-safety check).' },
+      { src: 'assets/img/coursework/bamjack-assembly.webp', alt: 'SolidWorks render of the BAMJACK assembly: a long main frame with telescopic arms ending in bottle-screw jacks, plus the gearbox accessory with extension arms.', caption: 'BAMJACK assembly with the gearbox accessory (the 4-jack version mirrors this on the main frame).' },
+      { src: 'assets/img/coursework/bamjack-jack.webp', alt: 'SolidWorks render of the telescoping bottle-screw jack with a tiered body on a round base.', caption: 'Custom telescoping bottle-screw jack.' },
+      { src: 'assets/img/coursework/bamjack-jack-section.webp', alt: 'Section view of the bottle-screw jack showing nested tiers, threaded screws, gears, and bushings.', caption: 'Jack section view: 4 outer tiers, main cover, 3 threaded screws, 2 gears, 2 bushings.' },
+      { src: 'assets/img/coursework/bamjack-jack-exploded.webp', alt: 'Exploded SolidWorks view of the bottle-screw jack with numbered balloons and a parts list.', caption: 'Exploded view of the jack assembly (from our design constraint report).' },
+      { src: 'assets/img/coursework/bamjack-jack-fea-stress.webp', alt: 'SolidWorks Simulation von Mises stress plot of the jack assembly, mostly blue, with min and max probes labeled.', caption: 'Jack FEA at 1500 lbf: max von Mises stress 18.42 ksi.' },
+      { src: 'assets/img/coursework/bamjack-jack-fea-displacement.webp', alt: 'SolidWorks Simulation displacement plot of the jack assembly with a color contour.', caption: 'Jack FEA at 1500 lbf: displacement distribution.' },
+      { src: 'assets/img/coursework/bamjack-gearbox.webp', alt: 'Exploded SolidWorks view of the gearbox accessory showing the housing, gears, and T piece.', caption: 'Gearbox accessory, exploded view (Aluminum 7079).' },
+      { src: 'assets/img/coursework/bamjack-frame-early.webp', alt: 'Earlier SolidWorks render of the BAMJACK main frame with four arms ending in jacks.', caption: 'Earlier main frame and arm layout (design constraint report, March 2023).' },
+      { src: 'assets/img/coursework/bamjack-frame-fea.webp', alt: 'SolidWorks Simulation stress plot of a main frame arm section.', caption: 'Main frame FEA at 180 lbf (2.5 factor-of-safety check).' },
     ],
     links: [],
   },

@@ -179,6 +179,8 @@ ul { margin: 0; padding: 0; }
 @keyframes pulse { 50% { opacity: .35; } }
 
 /* ---------- project cards ---------- */
+.coursework { margin-top: 56px; }
+.subsection-title { font-size: 1.35rem; margin: 0 0 8px; }
 .project-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
 @media (min-width: 720px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1040px) { .project-grid { grid-template-columns: repeat(3, 1fr); } }

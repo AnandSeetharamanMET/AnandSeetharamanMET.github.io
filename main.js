@@ -94,13 +94,16 @@
     );
   }
 
-  if (grid) {
-    if (PROJECTS.length) {
-      grid.innerHTML = PROJECTS.map(cardHTML).join('');
-    } else {
-      grid.innerHTML = '<p class="empty">Projects coming soon.</p>';
-    }
-    grid.addEventListener('click', function (e) {
+  var cwGrid = $('#coursework-grid');
+  var cwWrap = $('#coursework');
+  var mainProjects = PROJECTS.filter(function (p) { return p.category !== 'coursework'; });
+  var cwProjects = PROJECTS.filter(function (p) { return p.category === 'coursework'; });
+  if (cwGrid) {
+    if (cwProjects.length) {
+      cwGrid.innerHTML = cwProjects.map(function (p) { return cardHTML(p, -1); }).join('');
+    } else if (cwWrap) { cwWrap.hidden = true; }
+  }
+  function onGridClick(e) {
       var btn = e.target.closest('.js-open-project');
       if (btn) { openProject(btn.getAttribute('data-slug'), btn); return; }
       var media = e.target.closest('.card-media img');
@@ -109,7 +112,15 @@
         var b = card && card.querySelector('.js-open-project');
         if (b) openProject(b.getAttribute('data-slug'), b);
       }
-    });
+  }
+  if (cwGrid) cwGrid.addEventListener('click', onGridClick);
+  if (grid) {
+    if (mainProjects.length) {
+      grid.innerHTML = mainProjects.map(cardHTML).join('');
+    } else {
+      grid.innerHTML = '<p class="empty">Projects coming soon.</p>';
+    }
+    grid.addEventListener('click', onGridClick);
   }
 
   /* ---------- project modal ---------- */
