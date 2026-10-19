@@ -73,3 +73,7 @@ Pages redeploys automatically.
 - **The resume PDF does include a phone number.** Swap in a version without it if you'd rather not publish it.
 - SpaceX work is described at a general, non-technical level, with no logos or imagery.
 - The senior design project is credited as a team project, and the KSU logo is intentionally not used.
+
+## Image credits
+
+- `assets/img/bg/earth-night-orbit-1920.webp` / `-960.webp`: "Earth Observation" (approaching San Francisco at night), NASA ID `iss040e090835`, taken by the Expedition 40 crew aboard the International Space Station, Aug 10, 2014. Courtesy NASA Johnson Space Center via the NASA Image and Video Library (https://images.nasa.gov/details/iss040e090835). NASA imagery is generally not copyrighted; NASA does not endorse this site. Resized and converted to WebP.
